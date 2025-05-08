@@ -8,6 +8,7 @@ on:
 
 jobs:
   run-tests:
+    if: github.event.pull_request.head.ref != 'main'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -15,7 +16,7 @@ jobs:
 
       - name: Run test
         run: echo "테스트 실행!"
-        
+
       - name: Print debug info
         run: |
           echo "Base ref: ${{ github.event.pull_request.base.ref }}"
