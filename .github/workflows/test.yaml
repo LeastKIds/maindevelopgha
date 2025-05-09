@@ -2,6 +2,7 @@ name: CI for PR into develop
 
 on:
   pull_request:
+    types: [opened, reopened, synchronize, ready_for_review]
     branches:
       - develop
   workflow_dispatch:
